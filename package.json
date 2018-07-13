@@ -2,7 +2,8 @@
   "name": "react-lite",
   "version": "1.0.0",
   "description": "lite version of react",
-  "main": "index.html",
+  "main": "lib/react.js",
+  "module": "src/React/index.js",
   "scripts": {
     "clean":"rm -rf ./dist ./lib",
     "start": "NODE_ENV=development webpack-dev-server",
@@ -22,5 +23,5 @@
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
   },
-  "keywords": []
+  "keywords": ["react","2kb","react-lite"]
 }
