@@ -1,5 +1,5 @@
 {
-  "name": "react-lite",
+  "name": "react-super-lite",
   "version": "1.0.0",
   "description": "lite version of react",
   "main": "lib/react.js",
@@ -23,5 +23,5 @@
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
   },
-  "keywords": ["react","2kb","react-lite"]
+  "keywords": ["react","2kb","react-super-lite"]
 }
