@@ -1,20 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 
-const env=process.env.NODE_ENV;
-const NODE_ENV = {
-  BUILD: "build",
-  DEVELOPMENT: "development"
-};
 const plugins = [
-  new HtmlWebpackPlugin({
-    filename: "index.html",
-    template: "index.html"
-  }),
-  new webpack.optimize.ModuleConcatenationPlugin()
-];
+    new CompressionPlugin({
+      asset: "[path].gz[query]"
+    }),
+    new webpack.optimize.ModuleConcatenationPlugin()
+  ];
 
 const rules = [
   {
@@ -24,25 +17,25 @@ const rules = [
     loader: "babel-loader"
   }
 ];
-const common= {
+const config= {
   mode: "production",
   entry: {
-    index: ["./src/Demo/index.js"],
-    react: ["./src/React/index.js"]
+    'react-super-lite': ["./src/index.js"]
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "lib"),
     filename: "[name].js",
+    library: "ReactSuperLite",
+    libraryTarget: "umd"
   },
+  
   module: {
     rules
   },
   resolve: {
     modules: ["node_modules", path.resolve(__dirname, "src")],
     extensions: [".js", ".json", ".jsx", ".css"],
-    alias: {
-      react: path.resolve(__dirname, "src/React/index.js")
-    }
+    alias: {   }
   },
   performance: {
     hints: "warning",
@@ -56,22 +49,4 @@ const common= {
   target: "web",
   plugins
 };
-const lib = {
-  ...common,
-  entry: {
-    react: ["./src/React/index.js"]
-  },
-  output: {
-    path: path.resolve(__dirname, "lib"),
-    filename: "[name].js"
-  },
-  plugins: [
-    new CompressionPlugin({
-      asset: "[path].gz[query]"
-    }),
-    new webpack.optimize.ModuleConcatenationPlugin()
-  ]
-};
-const demo={...common}
-module.exports =
-  env === NODE_ENV.DEVELOPMENT ? [demo] : [lib, demo];
+module.exports =config;
