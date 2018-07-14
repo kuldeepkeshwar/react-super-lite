@@ -2,8 +2,8 @@
   "name": "react-super-lite",
   "version": "1.0.0",
   "description": "lite version of react",
-  "main": "lib/react.js",
-  "module": "src/React/index.js",
+  "main": "lib/react-super-lite.js",
+  "module": "src/index.js",
   "scripts": {
     "clean":"rm -rf ./dist ./lib",
     "start": "NODE_ENV=development webpack-dev-server",
