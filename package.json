@@ -1,13 +1,15 @@
 {
   "name": "react-super-lite",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "lite version of react",
   "main": "lib/react-super-lite.js",
   "module": "src/index.js",
   "scripts": {
-    "clean":"rm -rf ./dist ./lib",
+    "clean": "rm -rf ./dist ./lib",
     "start": "NODE_ENV=development webpack-dev-server",
-    "build": "yarn clean & NODE_ENV=build webpack"
+    "build": "yarn clean & NODE_ENV=build webpack",
+    "preversion": "git-branch-is master",
+    "bump": "bump --prompt --commit --tag --push"
   },
   "dependencies": {},
   "devDependencies": {
@@ -18,10 +20,16 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-stage-3": "6.24.1",
     "compression-webpack-plugin": "^1.1.11",
+    "git-branch-is": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "version-bump-prompt": "^4.1.0",
     "webpack": "^4.16.0",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
   },
-  "keywords": ["react","2kb","react-super-lite"]
+  "keywords": [
+    "react",
+    "2kb",
+    "react-super-lite"
+  ]
 }
