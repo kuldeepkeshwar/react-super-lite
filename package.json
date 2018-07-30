@@ -1,6 +1,6 @@
 {
   "name": "react-super-lite",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "lite version of react",
   "main": "lib/react-super-lite.js",
   "module": "src/index.js",
