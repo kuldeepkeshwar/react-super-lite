@@ -27,7 +27,7 @@ class Component {
           this.$$setState(nextState, deadline);
           this.$$commits.length=0;
           this.$$running = false;
-        });
+        },{timeout:16});
       } 
     } else {
       this.$$setState(Object.assign({}, this.state, partialNextState));
