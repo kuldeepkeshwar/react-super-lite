@@ -10,7 +10,7 @@
     "build": "yarn clean & NODE_ENV=build webpack",
     "preversion": "git-branch-is master",
     "bump": "bump --prompt --commit --tag --push",
-    "prepublish": "npm run build && npm run bump"
+    "prepublish": "npm run build && git add . && git commit -m \"release\" && npm run bump"
   },
   "dependencies": {},
   "devDependencies": {
