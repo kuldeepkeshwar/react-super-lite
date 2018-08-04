@@ -1,6 +1,6 @@
 {
   "name": "react-super-lite",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "lite version of react",
   "main": "lib/react-super-lite.js",
   "module": "src/index.js",
@@ -9,7 +9,9 @@
     "start": "NODE_ENV=development webpack-dev-server",
     "build": "yarn clean & NODE_ENV=build webpack",
     "preversion": "git-branch-is master",
-    "bump": "bump --prompt --commit --tag --push"
+    "bump": "bump --prompt --commit --tag --push",
+    "prepublish": "npm run build && npm run bump",
+    "publish": "npm publish"
   },
   "dependencies": {},
   "devDependencies": {
