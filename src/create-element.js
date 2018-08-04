@@ -5,9 +5,14 @@ export const createElement = (type, props, ..._children) => {
     .concat(..._children)
     .filter(c => c)
     .map((c, i) => {
+      
+      if (c instanceof Function) {
+        return c;
+      }
       if (typeof c !== "object") {
         return { type: TEXT_NODE, props: { value: c } };
       }
+      
       return c;
     });
   if (typeof type === "object" && !(type instanceof Function)) {
